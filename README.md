@@ -1,9 +1,11 @@
 # Bookmarklets
 This is a collection of useful bookmarklets. If you find this helpful, consider starring it. If you know someone who may benefit from it, share it with them! If you want to add a bookmarklet or contribute in some way, please see [CONTRIBUTING.md](CONTRIBUTING.md)
+## Table of Contents
   - [Disclaimer](#disclaimer)
   - [What are bookmarklets?](#what-are-bookmarklets)
   - [How to Use](#how-to-use-bookmarklets)
   - [YouTube Video Speed Adjuster](#youtube-video-speed-adjuster)
+  - [QR Code Generator](#qr-code-generator)
 ## Disclaimer
 I don't endorse any of these bookmarklets. Some of them *may* be against some Terms of Service, and I am not responsible for if or how you use these, and you are accountable for your actions. Use at your own risk. No statements I make void this disclaimer.
 ## What Are Bookmarklets?
