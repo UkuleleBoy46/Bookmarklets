@@ -1,5 +1,5 @@
 # Bookmarklets
-This is a collection of useful bookmarklets. If you find this helpful, consider starring it. If you know someone who may benefit from it, share it with them!
+This is a collection of useful bookmarklets. If you find this helpful, consider starring it. If you know someone who may benefit from it, share it with them! If you want to add a bookmarklet or contribute in some way, please see [CONTRIBUTING.md](CONTRIBUTING.md)
   - [Disclaimer](#disclaimer)
   - [What are bookmarklets?](#what-are-bookmarklets)
   - [How to Use](#how-to-use-bookmarklets)
