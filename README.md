@@ -47,10 +47,12 @@ Use this bookmarklet to set your videos to a faster speed or a specific (e.g. 2.
 ```javascript
 javascript:speed = prompt('Select Playback Rate:');
 document.querySelector('video').playbackRate = speed;
+window.stop();
 ```
 If you have a favorite speed to watch videos at, use the below bookmarklet and change the "2" to your desired speed. Upon clicking, it will set the video to the specified speed, skipping the pop-up prompt.
 ```javascript
 javascript:document.querySelector('video').playbackRate = 2;
+window.stop();
 ```
 ## QR Code Generator
 This is a very useful bookmarklet for generating QR Codes of a website to then view on another device (with QR Code scanning abilities, of course). Credit goes to [Jarón Berends](https://codepen.io/jaronbarends) and you can view it [here on CodePen](https://codepen.io/jaronbarends/pen/nMpOZp).
