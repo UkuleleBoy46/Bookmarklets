@@ -4,7 +4,9 @@ This is a collection of useful bookmarklets. If you find this helpful, consider 
   - [Disclaimer](#disclaimer)
   - [What are bookmarklets?](#what-are-bookmarklets)
   - [How to Use](#how-to-use-bookmarklets)
+  - [YouTube Standard Page/Embed Toggle](#youtube-standard-pageembed-toggle)
   - [YouTube Video Speed Adjuster](#youtube-video-speed-adjuster)
+  - [YouTube Share Link Generator](#youtube-share-link-generator)
   - [QR Code Generator](#qr-code-generator)
 ## Disclaimer
 I don't endorse any of these bookmarklets. Some of them *may* be against some Terms of Service, and I am not responsible for if or how you use these, and you are accountable for your actions. Use at your own risk. No statements I make void this disclaimer.
@@ -25,17 +27,17 @@ javascript: (function() {
 	var embedURL = "/embed/";
 	var watchURL = "/watch?v=";
 	if (url.includes(watchURL)) {
-		var vParam = new URLSearchParams(window.location.search).get("v");
-		if (vParam) {
-			window.location.href = youtubeURL + "/embed/" + vParam;
+		var vidID = new URLSearchParams(window.location.search).get("v");
+		if (vidID) {
+			window.location.href = youtubeURL + "/embed/" + vidID;
 		} else {
-			alert("Error: The current URL does not contain a 'v' parameter.");
+			alert("Error: Couldn't find the video's ID.");
 		}
 	} else if (url.includes(embedURL)) {
 		var videoID = url.split(embedURL)[1];
 		window.location.href = youtubeURL + "/watch?v=" + videoID;
 	} else if (!url.includes(youtubeURL)) {
-		alert("Error: The current URL is not a YouTube URL. If ");
+		alert("Error: The current URL is not a YouTube URL.");
 	} else {
 		alert("Error: The current URL is not a valid video.");
 	}
@@ -56,9 +58,26 @@ If you have a favorite speed to watch videos at, use the below bookmarklet and c
 javascript:document.querySelector('video').playbackRate = 2;
 window.stop();
 ```
+## YouTube Share Link Generator
+Copying YouTube short URLs (e.g. https://youtu.be/dQw4w9WgXcQ) has never been easy. You need to click on the Share button (sometimes nested within a 3 dots icon), let it load, and then click the copy button (and then click the X to exit out of the modal!). With this simple bookmarklet, you can simply click it and it'll copy the shortened youtu.be URL to your clipboard. 
+> Tip: Change all or some of the "alert" actions to "console.log" if you want the process to be more seamless.
+```javascript
+javascript: var url = window.location.href;
+if (url.includes("youtube.com")) {
+	var vidID = new URLSearchParams(window.location.search).get("v");
+	if (vidID) {
+		navigator.clipboard.writeText("https://youtu.be/" + vidID);
+		alert(`Successfully copied video shortlink. (https://youtu.be/${vidID})`);
+	} else {
+		alert("Error: Video ID not found.");
+	}
+} else {
+	alert("Error: This is not a YouTube site.");
+}
+```
 ## QR Code Generator
 This is a very useful bookmarklet for generating QR Codes of a website to then view on another device (with QR Code scanning abilities, of course). Credit goes to [Jarón Berends](https://codepen.io/jaronbarends) and you can view it [here on CodePen](https://codepen.io/jaronbarends/pen/nMpOZp).
-> Help wanted! This bookmarklet seems complicated, and it can't run in the browser console (returns "[SyntaxError: missing variable name](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/No_variable_name)")
+> Help wanted! This bookmarklet seems complicated, and it can't run in the browser console (returns "[SyntaxError: missing variable name](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/No_variable_name)"). If you can simplify it, that would be appreciated (see [CONTRIBUTING.md](CONTRIBUTING.md)).
 ```javascript
 javascript: (function() {
 	var % 20 qrSrc = 'https://chart.googleapis.com/chart%3Fchs=250x250%26cht=qr%26chl=' + encodeURIComponent(document.location.href), overlay = document.createElement('div'), os = overlay.style, img = document.createElement('img');
