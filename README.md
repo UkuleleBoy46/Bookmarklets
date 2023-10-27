@@ -117,17 +117,28 @@ if (username === "Change this to user or channel name") {
 } else if (username === "general--Change this to username or channel name") {
 	var channelID = "97506846796530000-channel-id-change-this"
 } else {
-	alert("Error: User not found!")
-};
-fetch(`https://discord.com/api/v9/channels/${channelID}/messages`, {
-	method: 'post',
-	body: JSON.stringify({
-		content: message
-	}),
-	headers: {
-		"Content-Type": "application/json",
-		"Authorization": token
-	}
-});
+	alert("Error: User not found!");
+	throw new Error("User not found!");
+}
+var message = prompt("Enter message:");
+sendMessage();
+async function sendMessage() {
+	const response = await fetch(`https://discord.com/api/v9/channels/${channelID}/messages`, {
+		method: 'post',
+		body: JSON.stringify({
+			content: message
+		}),
+		headers: {
+			"Content-Type": "application/json",
+			"Authorization": token
+		}
+	});
+	const data = await response.json();
+	if (response.status !== 200) {
+		alert(`An error has occured! Error: ${response.status}`)
+	} else {
+		alert("Message sent!")
+	};
+}
 ```
 > Note: this bookmarklet will be updated soon, so check back later for a better version!
