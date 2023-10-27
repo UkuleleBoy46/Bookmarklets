@@ -8,6 +8,7 @@ This is a collection of useful bookmarklets. If you find this helpful, consider 
   - [YouTube Video Speed Adjuster](#youtube-video-speed-adjuster)
   - [YouTube Share Link Generator](#youtube-share-link-generator)
   - [QR Code Generator](#qr-code-generator)
+  - [Discord Messager](#discord-messager)
 ## Disclaimer
 I don't endorse any of these bookmarklets. Some of them *may* be against some Terms of Service, and I am not responsible for if or how you use these, and you are accountable for your actions. Use at your own risk. No statements I make void this disclaimer.
 ## What Are Bookmarklets?
@@ -98,3 +99,35 @@ javascript: (function() {
 	})
 })();
 ```
+## Discord Messager
+With this bookmarklet, you can send messages to people without booting up Discord (which is slow sometimes). There are two setup steps to get this working.
+1. Put you token into the area in the below code marked "PUT.YOU_DISCORD.TOKEN_HERE" (leave the quotation marks). You can find out how to get your Discord token [here](https://www.androidauthority.com/get-discord-token-3149920/).
+> **WARNING: Never share your token with anyone or paste it into applications, websites, or bookmarklets you don't trust (you can see from that this one is completely harmless and only uses it for accessing Discord API)!**
+
+> Tip: You can also use a bot's token to send a message as a bot, just add "Bot" before the token (example: "Bot xadafdfda.vcnm65cv_awaeou").
+2. Edit the if condition. First, [turn on developer mode](https://www.partitionwizard.com/partitionmagic/discord-developer-mode.html). Then duplicate one of the "else if"s or edit an existing one. Change all the text within quotes containing "Change this to username or channel name" to a username you want it to use (it doesn't have to be the exact username or channel name, user whatever you can remember the user or channel. Then copy the channel ID and put in it the second area containing "channel-id-change-this". Repeat the process as many times, for each person or channel you want to be able to quickly message.
+```javascript
+javascript: var token = "PUT.YOUR_DISCORD.TOKEN_HERE";
+var username = prompt("Enter username or channel:");
+var message = prompt("Enter message:");
+if (username === "Change this to user or channel name") {
+	var channelID = "2682632030152929-channel-id-change-this"
+} else if (username === "paulbrown--Change this to username or channel name") {
+	var channelID = "979796004217954394-channel-id-change-this"
+} else if (username === "general--Change this to username or channel name") {
+	var channelID = "97506846796530000-channel-id-change-this"
+} else {
+	alert("Error: User not found!")
+};
+fetch(`https://discord.com/api/v9/channels/${channelID}/messages`, {
+	method: 'post',
+	body: JSON.stringify({
+		content: message
+	}),
+	headers: {
+		"Content-Type": "application/json",
+		"Authorization": token
+	}
+});
+```
+> Note: this bookmarklet will be updated soon, so check back later for a better version!
