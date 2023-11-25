@@ -9,6 +9,7 @@ This is a collection of useful bookmarklets. If you find this helpful, consider 
   - [YouTube Share Link Generator](#youtube-share-link-generator)
   - [QR Code Generator](#qr-code-generator)
   - [Discord Messager](#discord-messager)
+  - [Drag and Drop Website Editor](#drag-and-drop-website-editor)
 ## Disclaimer
 I don't endorse any of these bookmarklets. Some of them *may* be against some Terms of Service, and I am not responsible for if or how you use these, and you are accountable for your actions. Use at your own risk. No statements I make void this disclaimer.
 ## What Are Bookmarklets?
@@ -142,3 +143,50 @@ async function sendMessage() {
 }
 ```
 > Note: this bookmarklet will be updated soon, so check back later for a better version!
+## Drag and Drop Website Editor
+| [Try](javascript%3A%20var%20b%20%3D%20X%20%3D%20Y%20%3D%20T%20%3D%20L%20%3D%200%3Bdocument.addEventListener(%22click%22%2C%20function(a)%20%7B%09a.preventDefault()%7D%2C%20!0)%3Bdocument.addEventListener(%22mousedown%22%2C%20c)%3Bdocument.addEventListener(%22touchstart%22%2C%20c)%3Bfunction%20c(a)%20%7B%09a.preventDefault()%3B%09a.target%20!%3D%3D%20document.documentElement%20%26%26%20a.target%20!%3D%3D%20document.body%20%26%26%20(b%20%3D%20Date.now()%2C%20a.target.setAttribute(%22data-drag%22%2C%20b)%2C%20a.target.style.position%20%3D%20%22relative%22%2C%20T%20%3D%20a.target.style.top.split(%22px%22)%5B0%5D%20%7C%7C%200%2C%20L%20%3D%20a.target.style.left.split(%22px%22)%5B0%5D%20%7C%7C%200)%3B%09X%20%3D%20a.clientX%20%7C%7C%20a.touches%5B0%5D.clientX%3B%09Y%20%3D%20a.clientY%20%7C%7C%20a.touches%5B0%5D.clientY%7Ddocument.addEventListener(%22mousemove%22%2C%20d)%3Bdocument.addEventListener(%22touchmove%22%2C%20d)%3Bfunction%20d(a)%20%7B%09if%20(%22%22%20!%3D%3D%20b)%20%7B%09%09var%20e%20%3D%20document.querySelector(%27%5Bdata-drag%3D%22%27%20%2B%20b%20%2B%20%27%22%5D%27)%3B%09%09e.style.top%20%3D%20parseInt(T)%20%2B%20parseInt((a.clientY%20%7C%7C%20a.touches%5B0%5D.clientY)%20-%20Y)%20%2B%20%22px%22%3B%09%09e.style.left%20%3D%20parseInt(L)%20%2B%20parseInt((a.clientX%20%7C%7C%20a.touches%5B0%5D.clientX)%20-%20X)%20%2B%20%22px%22%09%7D%7Ddocument.addEventListener(%22mouseup%22%2C%20f)%3Bdocument.addEventListener(%22touchend%22%2C%20f)%3Bfunction%20f()%20%7B%09b%20%3D%20%22%22%7Ddocument.addEventListener(%22mouseover%22%2C%20g)%3Bfunction%20g(a)%20%7B%09a.target.style.cursor%20%3D%20%22move%22%3B%09a.target.style.boxShadow%20%3D%20%22inset%20lime%200%200%201px%2Clime%200%200%201px%22%7Ddocument.addEventListener(%22mouseout%22%2C%20h)%3Bfunction%20h(a)%20%7B%09a.target.style.cursor%20%3D%20a.target.style.boxShadow%20%3D%20%22%22%7D%3B)
+| --- |
+
+You can move any element you want around the web page! Really useful for web developers!
+```javascript
+javascript: var b = X = Y = T = L = 0;
+document.addEventListener("click", function(a) {
+	a.preventDefault()
+}, !0);
+document.addEventListener("mousedown", c);
+document.addEventListener("touchstart", c);
+
+function c(a) {
+	a.preventDefault();
+	a.target !== document.documentElement && a.target !== document.body && (b = Date.now(), a.target.setAttribute("data-drag", b), a.target.style.position = "relative", T = a.target.style.top.split("px")[0] || 0, L = a.target.style.left.split("px")[0] || 0);
+	X = a.clientX || a.touches[0].clientX;
+	Y = a.clientY || a.touches[0].clientY
+}
+document.addEventListener("mousemove", d);
+document.addEventListener("touchmove", d);
+
+function d(a) {
+	if ("" !== b) {
+		var e = document.querySelector('[data-drag="' + b + '"]');
+		e.style.top = parseInt(T) + parseInt((a.clientY || a.touches[0].clientY) - Y) + "px";
+		e.style.left = parseInt(L) + parseInt((a.clientX || a.touches[0].clientX) - X) + "px"
+	}
+}
+document.addEventListener("mouseup", f);
+document.addEventListener("touchend", f);
+
+function f() {
+	b = ""
+}
+document.addEventListener("mouseover", g);
+
+function g(a) {
+	a.target.style.cursor = "move";
+	a.target.style.boxShadow = "inset lime 0 0 1px,lime 0 0 1px"
+}
+document.addEventListener("mouseout", h);
+
+function h(a) {
+	a.target.style.cursor = a.target.style.boxShadow = ""
+};
+```
