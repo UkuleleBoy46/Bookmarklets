@@ -13,7 +13,7 @@ This is a collection of useful bookmarklets. If you find this helpful, consider 
 I don't endorse any of these bookmarklets. Some of them *may* be against some Terms of Service, and I am not responsible for if or how you use these, and you are accountable for your actions. Use at your own risk. No statements I make void this disclaimer.
 ## What Are Bookmarklets?
 Bookmarklets are pieces of Javascript code you can put in a bookmark in a web browser that supports them. When clicked, the Javascript code will run, executing whatever the code does. Be wary of bookmarks you get from strangers, and read through them carefully. Be especially careful about external links in them, as your browser cookies (which may contain sensitive information such as passwords) and other information could be sent to them. **Don't worry, all bookmarklets on this page have been manually approved and are safe.**
-> Tip: Most bookmarklets can be copied and pasted into your browser's console and run that way!
+> Tip: Most bookmarklets can be copied and pasted into your browser's console and run that way, too!
 ## How to Use Bookmarklets
 1. Create a bookmark in a browser that supports Javascript bookmarklets.
 2. Copy the full code into the URL section, and give it a name (I often use short names or letter abbreviations so I can fit more into my bookmark bar).
