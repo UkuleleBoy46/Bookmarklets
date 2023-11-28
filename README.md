@@ -22,8 +22,8 @@ Bookmarklets are pieces of Javascript code you can put in a bookmark in a web br
 3. Click the bookmarklet like you would with a regular bookmark. The bookmarklet should fire.
    > Tip: If it doesn't work, check the browser console for errors.
 ## YouTube Standard Page/Embed Toggle
-| #youtube #utility | [⬆](#table-of-contents) |
-| --- | --- |
+| #youtube #utility | v1.0.0 | [⬆](#table-of-contents) |
+| --- | --- | --- |
 
 If you are on a YouTube page such as https://www.youtube.com/watch?v=dQw4w9WgXcQ and click this bookmarklet, you will be taken to https://www.youtube.com/embed/dQw4w9WgXcQ. Inversely, if you are on https://www.youtube.com/embed/dQw4w9WgXcQ and click it, you will be taken to https://www.youtube.com/watch?v=dQw4w9WgXcQ. This is useful if I want to watch a video in a larger player but don't want to go full screen. It can also be used to bypass YouTube's "Disable your ad blocker" message, as it doesn't appear when viewing it from the embed URL.
 ```javascript
@@ -50,8 +50,8 @@ javascript: (function() {
 })();
 ```
 ## YouTube Video Speed Adjuster
-| #youtube #utility | [⬆](#table-of-contents) |
-| --- | --- |
+| #youtube #utility | v1.0.2 | [⬆](#table-of-contents) |
+| --- | --- | --- |
 
 Use this bookmarklet to set your videos to a faster speed or a specific (e.g. 2.8) speed.
 > Note: YouTube videos no longer play audio when the speed is higher than 4.
@@ -68,8 +68,8 @@ javascript:document.querySelector('video').playbackRate = 2;
 window.stop();
 ```
 ## YouTube Share Link Generator
-| #youtube #utility | [⬆](#table-of-contents) |
-| --- | --- |
+| #youtube #utility | v1.0.0 |[⬆](#table-of-contents) |
+| --- | --- | --- |
 
 Copying YouTube short URLs (e.g. https://youtu.be/dQw4w9WgXcQ) has never been easy. You need to click on the Share button (sometimes nested within a 3 dots icon), let it load, and then click the copy button (and then click the X to exit out of the modal!). With this simple bookmarklet, you can simply click it and it'll copy the shortened youtu.be URL to your clipboard. 
 > Tip: Change all or some of the "alert" actions to "console.log" if you want the process to be more seamless.
@@ -88,8 +88,8 @@ if (url.includes("youtube.com")) {
 }
 ```
 ## QR Code Generator
-| #utility | [⬆](#table-of-contents) |
-| --- | --- |
+| #utility | v1.0.0 | [⬆](#table-of-contents) |
+| --- | --- | --- |
 
 This is a very useful bookmarklet for generating QR Codes of a website to then view on another device (with QR Code scanning abilities, of course). Credit goes to [Jarón Berends](https://codepen.io/jaronbarends) and you can view it [here on CodePen](https://codepen.io/jaronbarends/pen/nMpOZp).
 > Help wanted! This bookmarklet seems complicated, and it can't run in the browser console (returns "[SyntaxError: missing variable name](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/No_variable_name)"). If you can simplify it, that would be appreciated (see [CONTRIBUTING.md](CONTRIBUTING.md)).
@@ -114,8 +114,8 @@ javascript: (function() {
 })();
 ```
 ## Discord Messenger
-| #discord #message #utility #performance | [⬆](#table-of-contents) |
-| --- | --- |
+| #discord #message #utility #performance | v1.0.3 | [⬆](#table-of-contents) |
+| --- | --- | --- |
 
 With this bookmarklet, you can send messages to people without booting up Discord (which is slow sometimes). There are two setup steps to get this working.
 1. Put your token into the area in the below code marked "PUT.YOUR_DISCORD.TOKEN_HERE" (leave the quotation marks). You can find out how to get your Discord token [here](https://www.androidauthority.com/get-discord-token-3149920/).
@@ -358,8 +358,8 @@ With this bookmarklet, you can send messages to people without booting up Discor
 </details>
 
 ## Drag and Drop Website Editor
-| #dev #utility #editor | [⬆](#table-of-contents) |
-| --- | --- |
+| #dev #utility #editor | v1.0.0 | [⬆](#table-of-contents) |
+| --- | --- | --- |
 
 You can move any element you want around the web page! Really useful for web developers!
 ```javascript
