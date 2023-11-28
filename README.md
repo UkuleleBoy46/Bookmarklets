@@ -46,6 +46,8 @@ javascript: (function() {
 })();
 ```
 ## YouTube Video Speed Adjuster
+| #utility #performance | [⬆](#table-of-contents) |
+| --- | --- |
 Use this bookmarklet to set your videos to a faster speed or a specific (e.g. 2.8) speed.
 > Note: YouTube videos no longer play audio when the speed is higher than 4.
 
@@ -61,6 +63,8 @@ javascript:document.querySelector('video').playbackRate = 2;
 window.stop();
 ```
 ## YouTube Share Link Generator
+| #utility #performance | [⬆](#table-of-contents) |
+| --- | --- |
 Copying YouTube short URLs (e.g. https://youtu.be/dQw4w9WgXcQ) has never been easy. You need to click on the Share button (sometimes nested within a 3 dots icon), let it load, and then click the copy button (and then click the X to exit out of the modal!). With this simple bookmarklet, you can simply click it and it'll copy the shortened youtu.be URL to your clipboard. 
 > Tip: Change all or some of the "alert" actions to "console.log" if you want the process to be more seamless.
 ```javascript
@@ -78,6 +82,8 @@ if (url.includes("youtube.com")) {
 }
 ```
 ## QR Code Generator
+| #utility #performance | [⬆](#table-of-contents) |
+| --- | --- |
 This is a very useful bookmarklet for generating QR Codes of a website to then view on another device (with QR Code scanning abilities, of course). Credit goes to [Jarón Berends](https://codepen.io/jaronbarends) and you can view it [here on CodePen](https://codepen.io/jaronbarends/pen/nMpOZp).
 > Help wanted! This bookmarklet seems complicated, and it can't run in the browser console (returns "[SyntaxError: missing variable name](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/No_variable_name)"). If you can simplify it, that would be appreciated (see [CONTRIBUTING.md](CONTRIBUTING.md)).
 ```javascript
@@ -100,7 +106,9 @@ javascript: (function() {
 	})
 })();
 ```
-## Discord Messager
+## Discord Messenger
+| #discord #message #utility #performance | [⬆](#table-of-contents) |
+| --- | --- |
 With this bookmarklet, you can send messages to people without booting up Discord (which is slow sometimes). There are two setup steps to get this working.
 1. Put you token into the area in the below code marked "PUT.YOU_DISCORD.TOKEN_HERE" (leave the quotation marks). You can find out how to get your Discord token [here](https://www.androidauthority.com/get-discord-token-3149920/).
 > **WARNING: Never share your token with anyone or paste it into applications, websites, or bookmarklets you don't trust (you can see from that this one is completely harmless and only uses it for accessing Discord API)!**
@@ -144,8 +152,8 @@ async function sendMessage() {
 ```
 > Note: this bookmarklet will be updated soon, so check back later for a better version!
 ## Drag and Drop Website Editor
-| [Try](javascript%3A%20var%20b%20%3D%20X%20%3D%20Y%20%3D%20T%20%3D%20L%20%3D%200%3Bdocument.addEventListener(%22click%22%2C%20function(a)%20%7B%09a.preventDefault()%7D%2C%20!0)%3Bdocument.addEventListener(%22mousedown%22%2C%20c)%3Bdocument.addEventListener(%22touchstart%22%2C%20c)%3Bfunction%20c(a)%20%7B%09a.preventDefault()%3B%09a.target%20!%3D%3D%20document.documentElement%20%26%26%20a.target%20!%3D%3D%20document.body%20%26%26%20(b%20%3D%20Date.now()%2C%20a.target.setAttribute(%22data-drag%22%2C%20b)%2C%20a.target.style.position%20%3D%20%22relative%22%2C%20T%20%3D%20a.target.style.top.split(%22px%22)%5B0%5D%20%7C%7C%200%2C%20L%20%3D%20a.target.style.left.split(%22px%22)%5B0%5D%20%7C%7C%200)%3B%09X%20%3D%20a.clientX%20%7C%7C%20a.touches%5B0%5D.clientX%3B%09Y%20%3D%20a.clientY%20%7C%7C%20a.touches%5B0%5D.clientY%7Ddocument.addEventListener(%22mousemove%22%2C%20d)%3Bdocument.addEventListener(%22touchmove%22%2C%20d)%3Bfunction%20d(a)%20%7B%09if%20(%22%22%20!%3D%3D%20b)%20%7B%09%09var%20e%20%3D%20document.querySelector(%27%5Bdata-drag%3D%22%27%20%2B%20b%20%2B%20%27%22%5D%27)%3B%09%09e.style.top%20%3D%20parseInt(T)%20%2B%20parseInt((a.clientY%20%7C%7C%20a.touches%5B0%5D.clientY)%20-%20Y)%20%2B%20%22px%22%3B%09%09e.style.left%20%3D%20parseInt(L)%20%2B%20parseInt((a.clientX%20%7C%7C%20a.touches%5B0%5D.clientX)%20-%20X)%20%2B%20%22px%22%09%7D%7Ddocument.addEventListener(%22mouseup%22%2C%20f)%3Bdocument.addEventListener(%22touchend%22%2C%20f)%3Bfunction%20f()%20%7B%09b%20%3D%20%22%22%7Ddocument.addEventListener(%22mouseover%22%2C%20g)%3Bfunction%20g(a)%20%7B%09a.target.style.cursor%20%3D%20%22move%22%3B%09a.target.style.boxShadow%20%3D%20%22inset%20lime%200%200%201px%2Clime%200%200%201px%22%7Ddocument.addEventListener(%22mouseout%22%2C%20h)%3Bfunction%20h(a)%20%7B%09a.target.style.cursor%20%3D%20a.target.style.boxShadow%20%3D%20%22%22%7D%3B)
-| --- |
+| #dev #utility #editor | [⬆](#table-of-contents) |
+| --- | --- |
 
 You can move any element you want around the web page! Really useful for web developers!
 ```javascript
