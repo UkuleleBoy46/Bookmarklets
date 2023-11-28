@@ -9,7 +9,7 @@ This is a collection of useful bookmarklets. If you find this helpful, consider 
   - [YouTube Share Link Generator](#youtube-share-link-generator)
   - [QR Code Generator](#qr-code-generator)
   - [Discord Messenger](#discord-messenger)
-  - [Discord Messenger V2](#discord-messenger-v2) 🔥
+  - [Discord Messenger v2](#discord-messenger-v2) 🔥
   - [Drag and Drop Website Editor](#drag-and-drop-website-editor)
 ## Disclaimer
 I don't endorse any of these bookmarklets. Some of them *may* be against some Terms of Service, and I am not responsible for if or how you use these, and you are accountable for your actions. Use at your own risk. No statements I make void this disclaimer.
@@ -118,11 +118,11 @@ javascript: (function() {
 | --- | --- |
 
 With this bookmarklet, you can send messages to people without booting up Discord (which is slow sometimes). There are two setup steps to get this working.
-1. Put you token into the area in the below code marked "PUT.YOU_DISCORD.TOKEN_HERE" (leave the quotation marks). You can find out how to get your Discord token [here](https://www.androidauthority.com/get-discord-token-3149920/).
+1. Put your token into the area in the below code marked "PUT.YOUR_DISCORD.TOKEN_HERE" (leave the quotation marks). You can find out how to get your Discord token [here](https://www.androidauthority.com/get-discord-token-3149920/).
 > **WARNING: Never share your token with anyone or paste it into applications, websites, or bookmarklets you don't trust (you can see from that this one is completely harmless and only uses it for accessing Discord API)!**
 
 > Tip: You can also use a bot's token to send a message as a bot, just add "Bot" before the token (example: "Bot xadafdfda.vcnm65cv_awaeou").
-2. Edit the if condition. First, [turn on developer mode](https://www.partitionwizard.com/partitionmagic/discord-developer-mode.html). Then duplicate one of the "else if"s or edit an existing one. Change all the text within quotes containing "Change this to username or channel name" to a username you want it to use (it doesn't have to be the exact username or channel name, user whatever you can remember the user or channel. Then copy the channel ID and put in it the second area containing "channel-id-change-this". Repeat the process as many times, for each person or channel you want to be able to quickly message.
+2. Edit the if condition. First, [turn on developer mode](https://www.partitionwizard.com/partitionmagic/discord-developer-mode.html). Then duplicate one of the "else if"s or edit an existing one. Change all the text within quotes containing "Change this to username or channel name" to a username you want it to use (it doesn't have to be the exact username or channel name, you can shorten it to make it easier to type/remember). Then copy the channel ID (Not to be confused with a user ID. Even when DMing people, you have to use the DM's channel ID.) and put in it the second area containing "channel-id-change-this". Repeat the process as many times, for each person or channel you want to be able to quickly message.
 ```javascript
 javascript: var token = "PUT.YOUR_DISCORD.TOKEN_HERE";
 var username = prompt("Enter username or channel:");
@@ -158,18 +158,26 @@ async function sendMessage() {
 	};
 }
 ```
-## Discord Messenger V2
-| #discord #message #utility #performance | [⬆](#table-of-contents) |
-| --- | --- |
+## Discord Messenger v2
+| #discord #message #utility #performance | v2.0.0 | [⬆](#table-of-contents) |
+| --- | --- | --- |
+
+With this bookmarklet, you can send messages to people without booting up Discord (which is slow sometimes). There are two setup steps to get this working.
+1. Put your token into the area in the below code marked "PUT.YOUR_DISCORD.TOKEN_HERE" (leave the quotation marks). You can find out how to get your Discord token [here](https://www.androidauthority.com/get-discord-token-3149920/).
+> **WARNING: Never share your token with anyone or paste it into applications, websites, or bookmarklets you don't trust (you can see from that this one is completely harmless and only uses it for accessing Discord API)!**
+
+> Tip: You can also use a bot's token to send a message as a bot, just add "Bot" before the token (example: "Bot xadafdfda.vcnm65cv_awaeou").
+2. Edit the if condition. First, [turn on developer mode](https://www.partitionwizard.com/partitionmagic/discord-developer-mode.html). Change all the text within quotes containing "Change this to a username or channel name" to a username or channel name you want to contact. Then copy the channel ID (Not to be confused with a user ID. Even when DMing people, you have to use the DM's channel ID.) and put in it the second area containing "it's-id-here". Make as many name-ID pairs as you want for all the people or channels you want to quickly contact via this bookmarklet.
+> Make sure to also change the default channel. Its format is slightly different, so make sure you only change the things marked "Choose Your Default Channel" and "default-id-here". Repeat it in the standard format, too.
 
 <details>
-  <summary>Click me</summary>
+  <summary>Code in expandable area</summary>
 	
-  ```js
+  ```javascript
   javascript: (function (a) {
-	const users = `{ "Default":{"Name":"Dyno","ID":"979796004217954394"}, "Dyno": "979796004217954394", "Spark": "968263203014443029", "test": "1069443317730922546" }`;
+	const users = `{ "Default":{"Name":"Choose Your Default Channel","ID":"default-id-here"}, "Change this to a username or channel name": "it's-id-here", "Change this to a username or channel name": "it's-id-here-which-is-a-snowflake-number", "Change this to a username or channel name": "it's-id-here" }`;
 	const usersParsed = JSON.parse(users);
-	const token = "OTY4MjM5MTM5NjA0NTYxOTUx.GcdXZI.QSkDQi1YhNOZ0aYNs1J0gi5mMBGY76_NooySpw";
+	const token = "PUT.YOUR_DISCORD.TOKEN_HERE";
 	a = document.createElement('div');
 	a.style.position =
 		'fixed';
