@@ -122,12 +122,12 @@ With this bookmarklet, you can send messages to people without booting up Discor
 > **WARNING: Never share your token with anyone or paste it into applications, websites, or bookmarklets you don't trust (you can see from that this one is completely harmless and only uses it for accessing Discord API)!**
 
 > Tip: You can also use a bot's token to send a message as a bot, just add "Bot" before the token (example: "Bot xadafdfda.vcnm65cv_awaeou").
-2. Edit the if condition. First, [turn on developer mode](https://www.partitionwizard.com/partitionmagic/discord-developer-mode.html). Then duplicate one of the "else if"s or edit an existing one. Change all the text within quotes containing "Change this to username or channel name" to a username you want it to use (it doesn't have to be the exact username or channel name, you can shorten it to make it easier to type/remember). Then copy the channel ID (Not to be confused with a user ID. Even when DMing people, you have to use the DM's channel ID.) and put in it the second area containing "channel-id-change-this". Repeat the process as many times, for each person or channel you want to be able to quickly message.
+2. Edit the if condition. First, [turn on developer mode](https://www.partitionwizard.com/partitionmagic/discord-developer-mode.html). Change all the text within quotes containing "Change this to a username or channel name" to a username or channel name you want to contact (you can shorten it to whatever you want to make it easier to type/remember). Then copy the channel ID (Not to be confused with a user ID. Even when DMing people, you have to use the DM's channel ID.) and put in it the second area containing "it's-id-here". Make as many name-ID pairs as you want for all the people or channels you want to quickly contact via this bookmarklet.
 ```javascript
 javascript: (function () {
 	const token = "PUT.YOUR_DISCORD.TOKEN_HERE";
 	const username = prompt("Enter username or channel:");
-	const users = JSON.parse(`{"Change this to user or channel name":"channel-id-change-this","Change this to user or channel name":channel-id-change-this",}`);
+	const users = JSON.parse(`{"Change this to a username or channel name":"it's-id-here","Change this to a username or channel name":"it's-id-here"}`);
 	if (users[username]) {
 		const message = prompt("Enter message:");
 		sendMessage();
