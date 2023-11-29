@@ -11,6 +11,7 @@ This is a collection of useful bookmarklets. If you find this helpful, consider 
   - [Discord Messenger](#discord-messenger)
   - [Discord Messenger v2](#discord-messenger-v2) 🔥
   - [Drag and Drop Website Editor](#drag-and-drop-website-editor)
+  - [Scroll to Bottom](#scroll-to-bottom)
 ## Disclaimer
 I don't endorse any of these bookmarklets. Some of them *may* be against some Terms of Service, and I am not responsible for if or how you use these, and you are accountable for your actions. Use at your own risk. No statements I make void this disclaimer.
 ## What Are Bookmarklets?
@@ -399,4 +400,12 @@ document.addEventListener("mouseout", h);
 function h(a) {
 	a.target.style.cursor = a.target.style.boxShadow = ""
 };
+```
+## Scroll to Bottom
+| #utility | v1.0.0 | [⬆](#table-of-contents) |
+| --- | --- | --- |
+
+Instantly scroll to the bottom of a website.
+```javascript
+javascript: window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
 ```
