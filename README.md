@@ -114,7 +114,7 @@ javascript: (function() {
 })();
 ```
 ## Discord Messenger
-| #discord #message #utility #performance | v1.0.3 | [⬆](#table-of-contents) |
+| #discord #message #utility #performance | v1.2.0 | [⬆](#table-of-contents) |
 | --- | --- | --- |
 
 With this bookmarklet, you can send messages to people without booting up Discord (which is slow sometimes). There are two setup steps to get this working.
@@ -124,39 +124,35 @@ With this bookmarklet, you can send messages to people without booting up Discor
 > Tip: You can also use a bot's token to send a message as a bot, just add "Bot" before the token (example: "Bot xadafdfda.vcnm65cv_awaeou").
 2. Edit the if condition. First, [turn on developer mode](https://www.partitionwizard.com/partitionmagic/discord-developer-mode.html). Then duplicate one of the "else if"s or edit an existing one. Change all the text within quotes containing "Change this to username or channel name" to a username you want it to use (it doesn't have to be the exact username or channel name, you can shorten it to make it easier to type/remember). Then copy the channel ID (Not to be confused with a user ID. Even when DMing people, you have to use the DM's channel ID.) and put in it the second area containing "channel-id-change-this". Repeat the process as many times, for each person or channel you want to be able to quickly message.
 ```javascript
-javascript: var token = "PUT.YOUR_DISCORD.TOKEN_HERE";
-var username = prompt("Enter username or channel:");
-var message = prompt("Enter message:");
-if (username === "Change this to user or channel name") {
-	var channelID = "2682632030152929-channel-id-change-this"
-} else if (username === "paulbrown--Change this to username or channel name") {
-	var channelID = "979796004217954394-channel-id-change-this"
-} else if (username === "general--Change this to username or channel name") {
-	var channelID = "97506846796530000-channel-id-change-this"
-} else {
-	alert("Error: User not found!");
-	throw new Error("User not found!");
-}
-var message = prompt("Enter message:");
-sendMessage();
-async function sendMessage() {
-	const response = await fetch(`https://discord.com/api/v9/channels/${channelID}/messages`, {
-		method: 'post',
-		body: JSON.stringify({
-			content: message
-		}),
-		headers: {
-			"Content-Type": "application/json",
-			"Authorization": token
+javascript: (function () {
+	const token = "PUT.YOUR_DISCORD.TOKEN_HERE";
+	const username = prompt("Enter username or channel:");
+	const users = JSON.parse(`{"Change this to user or channel name":"channel-id-change-this","Change this to user or channel name":channel-id-change-this",}`);
+	if (users[username]) {
+		const message = prompt("Enter message:");
+		sendMessage();
+		async function sendMessage() {
+			const response = await fetch(`https://discord.com/api/v10/channels/${users[username]}/messages`, {
+				method: 'post',
+				body: JSON.stringify({
+					content: message
+				}),
+				headers: {
+					"Content-Type": "application/json",
+					"Authorization": token
+				}
+			});
+			const data = await response.json();
+			if (response.status !== 200) {
+				alert(`An error has occured! Error: ${response.status}`)
+			} else {
+				alert("Message sent!")
+			};
 		}
-	});
-	const data = await response.json();
-	if (response.status !== 200) {
-		alert(`An error has occured! Error: ${response.status}`)
 	} else {
-		alert("Message sent!")
-	};
-}
+		alert("User not found! Make sure you typed it correctly.")
+	}
+})();
 ```
 ## Discord Messenger v2
 | #discord #message #utility #performance | v2.0.0 | [⬆](#table-of-contents) |
@@ -297,7 +293,7 @@ With this bookmarklet, you can send messages to people without booting up Discor
 				event.preventDefault();
 				const message = textArea.value;
 				try {
-					const response = await fetch(`https://discord.com/api/v9/channels/${targetID}/messages`, {
+					const response = await fetch(`https://discord.com/api/v10/channels/${targetID}/messages`, {
 						method: 'post',
 						body: JSON.stringify({
 							content: message
