@@ -51,16 +51,18 @@ javascript: (function() {
 })();
 ```
 ## YouTube Video Speed Adjuster
-| #youtube #utility | v1.0.2 | [⬆](#table-of-contents) |
+| #youtube #utility | v1.0.3 | [⬆](#table-of-contents) |
 | --- | --- | --- |
 
 Use this bookmarklet to set your videos to a faster speed or a specific (e.g. 2.8) speed.
-> Note: YouTube videos no longer play audio when the speed is higher than 4.
+> Note: YouTube videos no won't play audio when the speed is higher than 4.
 
-> Tip: This can be used with other video players, too! However, it will alter the first video on the page.
+> Tip: This can be used with many other video players, too! However, it will alter the first video on the page.
 ```javascript
 javascript:speed = prompt('Select Playback Rate:');
-document.querySelector('video').playbackRate = speed;
+if (speed !== "") {
+    document.querySelector('video').playbackRate = speed;
+}
 window.stop();
 ```
 If you have a favorite speed to watch videos at, use the below bookmarklet and change the "2" to your desired speed. Upon clicking, it will set the video to the specified speed, skipping the pop-up prompt.
