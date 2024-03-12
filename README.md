@@ -13,7 +13,7 @@ This is a collection of useful bookmarklets. If you find this helpful, consider 
   - [Drag and Drop Website Editor](#drag-and-drop-website-editor)
   - [Scroll to Bottom](#scroll-to-bottom)
 ## Disclaimer
-I don't endorse any of these bookmarklets. Some of them *may* be against some Terms of Service, and I am not responsible for if or how you use these, and you are accountable for your actions. Use at your own risk. No statements I make void this disclaimer.
+I don't endorse any of these bookmarklets. Some of them *may* be against some Terms of Service, and I am not responsible for how you use these, and you are accountable for your actions. Please use them responsibly and at your own risk. No statements I make in any other place or time void this disclaimer.
 ## What Are Bookmarklets?
 Bookmarklets are pieces of Javascript code you can put in a bookmark in a web browser that supports them. When clicked, the Javascript code will run, executing whatever the code does. Be wary of bookmarks you get from strangers, and read through them carefully. Be especially careful about external links in them, as your browser cookies (which may contain sensitive information such as passwords) and other information could be sent to them. **Don't worry, all bookmarklets on this page have been manually approved and are safe.**
 > Tip: Most bookmarklets can be copied and pasted into your browser's console and run that way, too!
