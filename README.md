@@ -474,7 +474,7 @@ javascript: setInterval(function() {
 }, 100);
 window.stop();
 ```
-### Reduce Title
+## Reduce Title
 | #utility #editor | v1.0.0 | [⬆](#table-of-contents) |
 | --- | --- | --- |
 
