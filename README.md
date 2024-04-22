@@ -12,6 +12,8 @@ This is a collection of useful bookmarklets. If you find this helpful, consider 
   - [Discord Messenger v2](#discord-messenger-v2) 🔥
   - [Drag and Drop Website Editor](#drag-and-drop-website-editor)
   - [Scroll to Bottom](#scroll-to-bottom)
+  - [Continuously Scroll to Bottom](#continuously-scroll-to-bottom)
+  - [Reduce Title](#reduce-title)
 ## Disclaimer
 I don't endorse any of these bookmarklets. Some of them *may* be against some Terms of Service, and I am not responsible for how you use these, and you are accountable for your actions. Please use them responsibly and at your own risk. No statements I make in any other place or time void this disclaimer.
 ## What Are Bookmarklets?
@@ -457,7 +459,38 @@ function h(a) {
 | #utility | v1.0.0 | [⬆](#table-of-contents) |
 | --- | --- | --- |
 
-Instantly scroll to the bottom of a website.
+Instantly scroll to the bottom of the page.
 ```javascript
 javascript: window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
+```
+## Continuously Scroll to Bottom
+| #utility | v1.0.0 | [⬆](#table-of-contents) |
+| --- | --- | --- |
+
+Like the previous one, it scrolls to the bottom of the page, except it never stops scrolling. Useful for when new content is continuously added to the website.
+```javascript
+javascript: setInterval(function() {
+	window.scrollTo(0, document.body.scrollHeight);
+}, 100);
+window.stop();
+```
+### Reduce Title
+| #utility #editor | v1.0.0 | [⬆](#table-of-contents) |
+| --- | --- | --- |
+
+Change the title to just the root page's name, by setting the page's title to the text in the title that comes after a "|", "-", or "•".
+```javascript
+javascript: (function() {
+	var title = document.title.trim();
+	var match = title.match(/.*[\|\-•]\s*(.*)$/);
+	if (match && match[1]) {
+		var newTitle = match[1].trim();
+		document.title = newTitle;
+	} else {
+		var newTitle = prompt("Enter a new title:");
+		if (newTitle !== null) {
+			document.title = newTitle;
+		}
+	}
+})();
 ```
