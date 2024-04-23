@@ -20,10 +20,12 @@ I don't endorse any of these bookmarklets. Some of them *may* be against some Te
 ## What Are Bookmarklets?
 Bookmarklets are pieces of Javascript code you can put in a bookmark in a web browser that supports them. When clicked, the Javascript code will run, executing whatever the code does. Be wary of bookmarks you get from strangers, and read through them carefully. Be especially careful about external links in them, as your browser cookies (which may contain sensitive information such as passwords) and other information could be sent to them. **Don't worry, all bookmarklets on this page have been manually approved and are safe.**
 > Tip: Most bookmarklets can be copied and pasted into your browser's console and run that way, too!
+
+> Note: Due to the security policy of some websites, some bookmarklets will not function on some websites.
 ## How to Use Bookmarklets
 1. Create a bookmark in a browser that supports Javascript bookmarklets.
 2. Copy the full code into the URL section, and give it a name (I often use short names or letter abbreviations so I can fit more into my bookmark bar).
-3. Click the bookmarklet like you would with a regular bookmark. The bookmarklet should fire.
+3. Click the bookmarklet like you would with a regular bookmark. The code in the bookmarklet should execute.
    > Tip: If it doesn't work, check the browser console for errors.
 ## YouTube Standard Page/Embed Toggle
 | #youtube #utility | v1.0.0 | [⬆](#table-of-contents) |
