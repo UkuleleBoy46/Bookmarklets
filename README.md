@@ -13,7 +13,7 @@ This is a collection of useful bookmarklets. If you find this helpful, consider 
   - [Drag and Drop Website Editor](#drag-and-drop-website-editor)
   - [Scroll to Bottom](#scroll-to-bottom)
   - [Continuously Scroll to Bottom](#continuously-scroll-to-bottom)
-  - [Reduce Title](#reduce-title)
+  - [Edit/Simplify Page Title](#editsimplify-page-title)
   - [Anonymous Instagram Viewer](#anonymous-instagram-viewer)
 ## Disclaimer
 I don't endorse any of these bookmarklets. Some of them *may* be against some Terms of Service, and I am not responsible for how you use these, and you are accountable for your actions. Please use them responsibly and at your own risk. No statements I make in any other place or time void this disclaimer.
@@ -475,20 +475,20 @@ javascript: setInterval(function() {
 }, 100);
 window.stop();
 ```
-## Reduce Title
-| #utility #editor | v1.0.0 | [⬆](#table-of-contents) |
+## Edit/Simplify Page Title
+| #utility #editor | v1.0.1 | [⬆](#table-of-contents) |
 | --- | --- | --- |
 
 Change the title to just the root page's name, by setting the page's title to the text in the title that comes after a "|", "-", or "•".
 ```javascript
 javascript: (function() {
 	var title = document.title.trim();
-	var match = title.match(/.*[\|\-•]\s*(.*)$/);
+	var match = title.match(/.*[\|\-%E2%80%A2]\s*(.*)$/);
 	if (match && match[1]) {
 		var newTitle = match[1].trim();
 		document.title = newTitle;
 	} else {
-		var newTitle = prompt("Enter a new title:");
+		var newTitle = prompt("Enter a new title:", title);
 		if (newTitle !== null) {
 			document.title = newTitle;
 		}
