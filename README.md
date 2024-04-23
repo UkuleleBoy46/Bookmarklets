@@ -14,6 +14,7 @@ This is a collection of useful bookmarklets. If you find this helpful, consider 
   - [Scroll to Bottom](#scroll-to-bottom)
   - [Continuously Scroll to Bottom](#continuously-scroll-to-bottom)
   - [Reduce Title](#reduce-title)
+  - [Anonymous Instagram Viewer](#anonymous-instagram-viewer)
 ## Disclaimer
 I don't endorse any of these bookmarklets. Some of them *may* be against some Terms of Service, and I am not responsible for how you use these, and you are accountable for your actions. Please use them responsibly and at your own risk. No statements I make in any other place or time void this disclaimer.
 ## What Are Bookmarklets?
@@ -494,3 +495,19 @@ javascript: (function() {
 	}
 })();
 ```
+## Anonymous Instagram Viewer
+| #utility #anonymous #social | v1.0.0 | [⬆](#table-of-contents) |
+| --- | --- | --- |
+
+When viewing a profile on Instagram, click this bookmarklet to view the profile on [InstaNavigation.com/](https://instanavigation.com/).
+```javascript
+javascript: (function() {
+	var path = window.location.href.replace(/^https?:\/\/[^/]+/, '');
+	var parts = path.split('/').filter(Boolean);
+	if (parts.length > 0) {
+		window.open("https://instanavigation.com/user-profile/" + parts[0], '_blank');
+	} else {
+		alert('Could not extract username from the URL.');
+	}
+})();
+```	
