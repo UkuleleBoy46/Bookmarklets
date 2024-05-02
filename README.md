@@ -163,7 +163,7 @@ javascript: (function () {
 })();
 ```
 ## Discord Messenger v2
-| #discord #message #utility #performance | v2.1.0 | [⬆](#table-of-contents) |
+| #discord #message #utility #performance | v2.2.0 | [⬆](#table-of-contents) |
 | --- | --- | --- |
 
 With this bookmarklet, you can send messages to people without booting up Discord (which is slow sometimes). There are two setup steps to get this working.
@@ -179,42 +179,45 @@ With this bookmarklet, you can send messages to people without booting up Discor
 	
   ```javascript
 javascript: (function () {
-    const channels = JSON.parse(`{ "Default":{"Name":"Choose Your Default Channel","ID":"default-id-here"}, "Change this to a username": "it's id here", "Change this to a username": "it's id here"}`);
-    const token = "PUT_YOUR_DISCORD_TOKEN_HERE";
+javascript: (function () {
+  const channels = JSON.parse(`{ "Default":{"Name":"Choose Your Default Channel","ID":"default-id-here"}, "Change this to a username": "it's id here", "Change this to a username": "it's id here"}`);
+  const token = "PUT_YOUR_DISCORD_TOKEN_HERE";
     discordMessenger = document.createElement('div');
-    discordMessenger.style.position =
-        'fixed';
-    discordMessenger.style.left = discordMessenger.style.right = '30%';
-    discordMessenger.style.top = discordMessenger.style.bottom = '10%';
-    discordMessenger.style.zIndex = '100000';
-    discordMessenger.style.background = '#313338';
     discordMessenger.id = 'discord-messenger';
+    discordMessenger.className = 'discord-messenger-class';
     discordMessenger.innerHTML =
         `<style>
-		.header {
-		  width: 100%;
-		  height: 48px;
-		  padding: 8px;
-		  box-sizing: border-box;
-		  box-shadow: 0px 3px 2px -2px #1d1d1d;
-          position: relative;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-		}
-		.channel-name {
-		  font-size: 16px;
-		  color: #f2f3f5;
-		  text-align: left;
-		  padding: 10px;
-		  margin: 24px;
-		  font-weight: 600;
-		  font-family: 'Noto Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
-		  line-height: 20px;
-		  cursor: pointer;
-          width: fit-content;
-          position: absolute
-		}
+        .discord-messenger-class, discord-messenger-class * {
+            all: unset;
+            position: fixed;
+            inset: 10%;
+            z-index: 6000;
+            background-color: #313338;
+        }
+        .header {
+        width: 100%;
+        height: 48px;
+        padding: 8px;
+        box-sizing: border-box;
+        box-shadow: 0px 3px 2px -2px #1d1d1d;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        }
+        .channel-name {
+        font-size: 16px;
+        color: #f2f3f5;
+        text-align: left;
+        padding: 10px;
+        margin: 24px;
+        font-weight: 600;
+        font-family: 'Noto Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+        line-height: 20px;
+        cursor: pointer;
+        width: fit-content;
+        position: absolute
+        }
         .channel-name:hover {
             color: #b5bac1;
         }
@@ -225,67 +228,68 @@ javascript: (function () {
             top: 37px;
             position: absolute;
             border-radius: 3px;
+            z-index: 8000;
         }
-		.channel-option {
+        .channel-option {
             font-size: 16px;
-		    color: #b5bac1;
-		    text-align: left;
+            color: #b5bac1;
+            text-align: left;
             font-weight: 600;
-		    font-family: 'Noto Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
-		    line-height: 20px;
-			background-color: #111214;
-			padding: 3px;
-			margin: 3px;
-			border-radius: 3px;
+            font-family: 'Noto Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+            line-height: 20px;
+            background-color: #111214;
+            padding: 3px;
+            margin: 3px;
+            border-radius: 3px;
             display: block;
             cursor: pointer;
-		}
-		.channel-option:hover {
-			background-color: #4752c4;
+        }
+        .channel-option:hover {
+            background-color: #4752c4;
             color: #ffffff;
-		}
+        }
         .close-button {
             fill: #b5bac1;
         }
         .close-button:hover {
             fill: #DADCE0;
         }
-		.msg-area {
-		  border-radius: 5px;
-		  position: absolute;
-		  bottom: 11px;
-		  width: 98%;
-		  left: 1%;
-		  background-color: #383a40;
-		  overflow-wrap: break-word;
-		  padding-bottom: 11px;
-		  padding-top: 11px;
-		  white-space: break-spaces !important;
-		  text-align: left;
-		  height: 32px;
-		}
-		.msg-input {
-		  width: 100%;
-		  display: block;
-		  padding: 10px;
-		  font-size: 14px;
-		  margin: 50px auto;
-		  border-radius: 6px;
-		  border: 0;
-		  outline: 0;
-		  font-family: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		  font-weight: 400;
-		  z-index: 1000;
-		  bottom: -51px;
-		  position: absolute;
-		  background-color: #383a40;
-		  color: #dbdee1;
-          resize: none;
-		}
+        .msg-area {
+        border-radius: 5px;
+        position: absolute;
+        bottom: 11px;
+        width: 98%;
+        left: 1%;
+        background-color: #383a40;
+        overflow-wrap: break-word;
+        padding-bottom: 11px;
+        padding-top: 11px;
+        white-space: break-spaces !important;
+        text-align: left;
+        height: 32px;
+        }
+        .msg-input {
+        width: 100%;
+        display: block;
+        padding: 10px;
+        font-size: 14px;
+        margin: 50px auto;
+        border-radius: 6px;
+        border: 0;
+        outline: 0;
+        font-family: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        z-index: 7000;
+        bottom: -51px;
+        position: absolute;
+        background-color: #383a40;
+        color: #dbdee1;
+        resize: none;
+        }
         .send-button {
             bottom: 8px;
             position: absolute;
-            z-index: 1001;
+            z-index: 8001;
             right: 10px;
             fill: #4e5058;
             cursor: not-allowed;
@@ -298,24 +302,70 @@ javascript: (function () {
         .content-true:hover {
             fill: #7971F3;
         }
-	  </style>
-	  <div class="header">
-		<svg padding="10px" width="24" height="24" viewBox="0 0 24 24" x="0" y="0" aria-hidden="true" role="img">
-		    <path fill="#80848e" fill-rule="evenodd" clip-rule="evenodd" d="M5.88657 21C5.57547 21 5.3399 20.7189 5.39427 20.4126L6.00001 17H2.59511C2.28449 17 2.04905 16.7198 2.10259 16.4138L2.27759 15.4138C2.31946 15.1746 2.52722 15 2.77011 15H6.35001L7.41001 9H4.00511C3.69449 9 3.45905 8.71977 3.51259 8.41381L3.68759 7.41381C3.72946 7.17456 3.93722 7 4.18011 7H7.76001L8.39677 3.41262C8.43914 3.17391 8.64664 3 8.88907 3H9.87344C10.1845 3 10.4201 3.28107 10.3657 3.58738L9.76001 7H15.76L16.3968 3.41262C16.4391 3.17391 16.6466 3 16.8891 3H17.8734C18.1845 3 18.4201 3.28107 18.3657 3.58738L17.76 7H21.1649C21.4755 7 21.711 7.28023 21.6574 7.58619L21.4824 8.58619C21.4406 8.82544 21.2328 9 20.9899 9H17.41L16.35 15H19.7549C20.0655 15 20.301 15.2802 20.2474 15.5862L20.0724 16.5862C20.0306 16.8254 19.8228 17 19.5799 17H16L15.3632 20.5874C15.3209 20.8261 15.1134 21 14.8709 21H13.8866C13.5755 21 13.3399 20.7189 13.3943 20.4126L14 17H8.00001L7.36325 20.5874C7.32088 20.8261 7.11337 21 6.87094 21H5.88657ZM9.41045 9L8.35045 15H14.3504L15.4104 9H9.41045Z"></path>
-		</svg>
-		<h1 id="channel-name" class="channel-name">${channels.Default.Name}</h1>
+        .messages-container {
+            overflow: hidden;
+            overflow-y: auto;
+            position: absolute;
+            top: 48px;
+            bottom: 65px;
+            left: 1%;
+        }
+        .message {
+            color: #2e3035;
+        }
+        .avatar {
+            
+        }
+        .message-header {
+            margin: 0;
+        }
+        .username {
+            color: #f2f3f5;
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 1.375rem;
+            display: inline;
+            margin-right: .25rem;
+            font-family: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        .timestamp {
+            color: #949ba4;
+            font-size: .75rem;
+            font-weight: 500;
+            line-height: 1.375rem;
+            display: inline;
+            margin-left: .25rem;
+            font-family: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        .content {
+            color: #dbdee1;
+            font-size: 1rem;
+            line-height: 1.375rem;
+            font-family: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            margin: 0;
+            margin-bottom: 1rem;
+        }
+    </style>
+    <div class="header">
+        <svg padding="10px" width="24" height="24" viewBox="0 0 24 24" x="0" y="0" aria-hidden="true" role="img">
+            <path fill="#80848e" fill-rule="evenodd" clip-rule="evenodd" d="M5.88657 21C5.57547 21 5.3399 20.7189 5.39427 20.4126L6.00001 17H2.59511C2.28449 17 2.04905 16.7198 2.10259 16.4138L2.27759 15.4138C2.31946 15.1746 2.52722 15 2.77011 15H6.35001L7.41001 9H4.00511C3.69449 9 3.45905 8.71977 3.51259 8.41381L3.68759 7.41381C3.72946 7.17456 3.93722 7 4.18011 7H7.76001L8.39677 3.41262C8.43914 3.17391 8.64664 3 8.88907 3H9.87344C10.1845 3 10.4201 3.28107 10.3657 3.58738L9.76001 7H15.76L16.3968 3.41262C16.4391 3.17391 16.6466 3 16.8891 3H17.8734C18.1845 3 18.4201 3.28107 18.3657 3.58738L17.76 7H21.1649C21.4755 7 21.711 7.28023 21.6574 7.58619L21.4824 8.58619C21.4406 8.82544 21.2328 9 20.9899 9H17.41L16.35 15H19.7549C20.0655 15 20.301 15.2802 20.2474 15.5862L20.0724 16.5862C20.0306 16.8254 19.8228 17 19.5799 17H16L15.3632 20.5874C15.3209 20.8261 15.1134 21 14.8709 21H13.8866C13.5755 21 13.3399 20.7189 13.3943 20.4126L14 17H8.00001L7.36325 20.5874C7.32088 20.8261 7.11337 21 6.87094 21H5.88657ZM9.41045 9L8.35045 15H14.3504L15.4104 9H9.41045Z"></path>
+        </svg>
+        <h1 id="channel-name" class="channel-name">${channels.Default.Name}</h1>
             <svg style="right:2%;position:absolute;" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 14 14">
                 <path class="close-button" id="close-button" fill="#b5bac1" d="M7.02799 0.333252C3.346 0.333252 0.361328 3.31792 0.361328 6.99992C0.361328 10.6819 3.346 13.6666 7.02799 13.6666C10.71 13.6666 13.6947 10.6819 13.6947 6.99992C13.6947 3.31792 10.7093 0.333252 7.02799 0.333252ZM10.166 9.19525L9.22333 10.1379L7.02799 7.94325L4.83266 10.1379L3.89 9.19525L6.08466 6.99992L3.88933 4.80459L4.832 3.86259L7.02733 6.05792L9.22266 3.86259L10.1653 4.80459L7.97066 6.99992L10.166 9.19525Z"></path>
             </svg>
         </div>
         <div id="channels-container" class="channels-container"></div>
-		<div class="msg-area">
+        <div id="messages-container" class="messages-container"></div>
+        <div class="msg-area">
             <svg aria-hidden="true" role="img" id="send-button" class="send-button" width="16" height="16" viewBox="0 0 16 16">
                 <path d="M8.2738 8.49222L1.99997 9.09877L0.349029 14.3788C0.250591 14.691 0.347154 15.0322 0.595581 15.246C0.843069 15.4597 1.19464 15.5047 1.48903 15.3613L15.2384 8.7032C15.5075 8.57195 15.6781 8.29914 15.6781 8.00007C15.6781 7.70101 15.5074 7.4282 15.2384 7.29694L1.49839 0.634063C1.20401 0.490625 0.852453 0.535625 0.604941 0.749376C0.356493 0.963128 0.259941 1.30344 0.358389 1.61563L2.00932 6.89563L8.27093 7.50312C8.52405 7.52843 8.71718 7.74125 8.71718 7.99531C8.71718 8.24938 8.52406 8.46218 8.27093 8.4875L8.2738 8.49222Z"></path>
             </svg>
         <textarea class='msg-input auto-expand' rows='1' data-min-rows='1' style="overflow:hidden;" id="msg-input" placeholder='Message #${channels.Default.Name}' autofocus></textarea>
         </div>`;
     document.body.appendChild(discordMessenger);
+    let targetID = channels.Default.ID;
+    getMessages();
 
     document.getElementById("msg-input").addEventListener('input', autoResize, false);
     document.getElementById("msg-input").addEventListener('input', textAreaStatus);
@@ -335,9 +385,11 @@ javascript: (function () {
                 textArea.value = value.substring(0, start) + '\n' + value.substring(end);
                 textArea.selectionStart = textArea.selectionEnd = start + 1;
                 event.preventDefault();
+                textAreaStatus()
             } else {
                 event.preventDefault();
                 sendMessage();
+                textAreaStatus();
             }
         }
     });
@@ -368,6 +420,7 @@ javascript: (function () {
                 console.log(data);
                 textArea.value = '';
                 textArea.rows = 1;
+                populateMessage(data, "single");
             } catch (error) {
                 console.error(error);
             }
@@ -376,9 +429,9 @@ javascript: (function () {
     function close() {
         document.getElementById('discord-messenger').remove();
     }
+
     const channelsContainer = document.getElementById('channels-container');
     const channelName = document.getElementById('channel-name');
-    let targetID = channels.Default.ID;
 
     discordMessenger.addEventListener('click', (event) => {
         if (event.target === channelName) {
@@ -394,6 +447,7 @@ javascript: (function () {
                         channelName.innerHTML = targetName;
                         textArea.placeholder = 'Message #' + targetName;
                         document.querySelectorAll('.channel-option').forEach(e => e.remove());
+                        getMessages();
                     });
                     channelsContainer.appendChild(channel);
                 }
@@ -404,9 +458,46 @@ javascript: (function () {
             document.querySelectorAll('.channel-option').forEach(e => e.remove());
         }
     });
+    const messagesContainer = document.getElementById('messages-container');
+    async function getMessages() {
+        try {
+            const response = await fetch(`https://discord.com/api/v10/channels/${targetID}/messages`, {
+                method: 'get',
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": token
+                }
+            });
+            const data = await response.json();
+            console.log(data);
+            messagesContainer.innerHTML = '';
+            for (let i = 0; i < data.length; i++) {
+                populateMessage(data[i], "multiple");
+            }
+
+        } catch (error) {
+            console.error(error);
+        }
+    }
+    function populateMessage(data, type) {
+        const messagesContainer = document.getElementById('messages-container');
+        const newMessage = document.createElement('span');
+        newMessage.class = "message-container";
+        newMessage.id = `${data.id}`;
+        newMessage.classList = "message";
+        newMessage.innerHTML = `<h3 class="message-header"><p class="username">${data.author.global_name}</p><time class="timestamp" datetime="${data.timestamp}">${data.timestamp}</time></h3><p class="content">${data.content}</p>`;
+
+        if (type == "single") {
+            messagesContainer.appendChild(newMessage);
+        } else if (type == "multiple") {
+            messagesContainer.insertBefore(newMessage, messagesContainer.firstChild);
+        }
+        messagesContainer.scrollTo({ left: 0, top: messagesContainer.scrollHeight });
+    }
 
     document.getElementById('close-button').addEventListener('click', close);
     document.getElementById('send-button').addEventListener('click', sendMessage);
+}
 })();
   ```
 </details>
