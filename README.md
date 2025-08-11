@@ -1,5 +1,5 @@
 # Bookmarklets
-This is a collection of useful bookmarklets. If you find this helpful, consider starring it. If you know someone who may benefit from it, share it with them! If you want to add a bookmarklet or contribute in some way, please see [CONTRIBUTING.md](CONTRIBUTING.md).
+This is a collection of useful bookmarklets. If you find this helpful, consider starring it so you can find it again later. If you know someone who may benefit from it, share it with them! If you want to add a bookmarklet or contribute in some way, please see [CONTRIBUTING.md](CONTRIBUTING.md).
 ## Table of Contents
   - [Disclaimer](#disclaimer)
   - [What are bookmarklets?](#what-are-bookmarklets)
@@ -15,18 +15,20 @@ This is a collection of useful bookmarklets. If you find this helpful, consider 
   - [Continuously Scroll to Bottom](#continuously-scroll-to-bottom)
   - [Edit/Simplify Page Title](#editsimplify-page-title)
   - [Anonymous Instagram Viewer](#anonymous-instagram-viewer)
+  - [Copy Instagram Photos](#copy-instagram-photos)
 ## Disclaimer
 I don't endorse any of these bookmarklets. Some of them *may* be against some Terms of Service, and I am not responsible for how you use these, and you are accountable for your actions. Please use them responsibly and at your own risk. No statements I make in any other place or time void this disclaimer.
 ## What Are Bookmarklets?
-Bookmarklets are pieces of Javascript code you can put in a bookmark in a web browser that supports them. When clicked, the Javascript code will run, executing whatever the code does. Be wary of bookmarks you get from strangers, and read through them carefully. Be especially careful about external links in them, as your browser cookies (which may contain sensitive information such as passwords) and other information could be sent to them. **Don't worry, all bookmarklets on this page have been manually approved and are safe.**
+Bookmarklets are pieces of JavaScript code you can put in a bookmark in a web browser that supports them. When clicked, the JavaScript code will run instead of opening a URL, executing whatever the code does. Be wary of bookmarklets you get from strangers, and read through them carefully. Be especially careful about external links in them, as your browser cookies (which may contain sensitive information such as passwords) and other information could be sent to them. **Don't worry, all bookmarklets on this page have been manually approved and are safe.**
 > Tip: Most bookmarklets can be copied and pasted into your browser's console and run that way, too!
 
 > Note: Due to the security policy of some websites, some bookmarklets will not function on some websites.
 ## How to Use Bookmarklets
-1. Create a bookmark in a browser that supports Javascript bookmarklets.
+1. Create a bookmark in a browser that supports JavaScript bookmarklets.
 2. Copy the full code into the URL section, and give it a name (I often use short names or letter abbreviations so I can fit more into my bookmark bar).
 3. Click the bookmarklet like you would with a regular bookmark. The code in the bookmarklet should execute.
    > Tip: If it doesn't work, check the browser console for errors.
+   > Need help? Open an [Issue](https://github.com/UkuleleBoy46/Bookmarklets/issues).
 ## YouTube Standard Page/Embed Toggle
 | #youtube #utility | v1.0.0 | [⬆](#table-of-contents) |
 | --- | --- | --- |
@@ -130,7 +132,7 @@ With this bookmarklet, you can send messages to people without booting up Discor
 > **WARNING: Never share your token with anyone or paste it into applications, websites, or bookmarklets you don't trust (you can see from that this one is completely harmless and only uses it for accessing Discord API)!**
 
 > Tip: You can also use a bot's token to send a message as a bot, just add "Bot" before the token (example: "Bot xadafdfda.vcnm65cv_awaeou").
-2. Edit the if condition. First, [turn on developer mode](https://www.partitionwizard.com/partitionmagic/discord-developer-mode.html). Change all the text within quotes containing "Change this to a username or channel name" to a username or channel name you want to contact (you can shorten it to whatever you want to make it easier to type/remember). Then copy the channel ID (Not to be confused with a user ID. Even when DMing people, you have to use the DM's channel ID.) and put in it the second area containing "it's-id-here". Make as many name-ID pairs as you want for all the people or channels you want to quickly contact via this bookmarklet.
+2. Edit the if condition. First, [turn on developer mode](https://www.partitionwizard.com/partitionmagic/discord-developer-mode.html) in Discord (this will enable you to right-click on channels to copy the channel ID). Change all the text within quotes containing "Change this to a username or channel name" to a username or channel name you want to contact (you can shorten it to whatever you want to make it easier to type/remember). Then copy the channel ID (Not to be confused with a user ID. Even when DMing people, you have to use the DM's channel ID.) and put in it the second area containing "it's-id-here". Make as many name-ID pairs as you want for all the people or channels you want to quickly contact via this bookmarklet.
 ```javascript
 javascript: (function () {
 	const token = "PUT.YOUR_DISCORD.TOKEN_HERE";
@@ -166,12 +168,12 @@ javascript: (function () {
 | #discord #message #utility #performance | v2.2.0 | [⬆](#table-of-contents) |
 | --- | --- | --- |
 
-With this bookmarklet, you can send messages to people without booting up Discord (which is slow sometimes). There are two setup steps to get this working.
+With this bookmarklet, you can send messages to people without booting up Discord (which is slow sometimes). Extremely improved from version 1! There are two setup steps to get this working.
 1. Put your token into the area in the below code marked "PUT_YOUR_DISCORD_TOKEN_HERE" (leave the quotation marks). You can find out how to get your Discord token [here](https://www.androidauthority.com/get-discord-token-3149920/).
-> **WARNING: Never share your token with anyone or paste it into applications, websites, or bookmarklets you don't trust (you can see from that this one is completely harmless and only uses it for accessing Discord API)!**
+> **WARNING: Never share your token with anyone or paste it into applications, websites, or bookmarklets you don't trust (you can see from that this bookmarklet is harmless and only uses it for accessing the Discord API)!**
 
 > Tip: You can also use a bot's token to send a message as a bot, just add "Bot" before the token (example: "Bot xadafdfda.vcnm65cv_awaeou").
-2. Edit the if condition. First, [turn on developer mode](https://www.partitionwizard.com/partitionmagic/discord-developer-mode.html). Change all the text within quotes containing "Change this to a username or channel name" to a username or channel name you want to contact. Then copy the channel ID (Not to be confused with a user ID. Even when DMing people, you have to use the DM's channel ID.) and put in it the second area containing "it's-id-here". Make as many name-ID pairs as you want for all the people or channels you want to quickly contact via this bookmarklet.
+2. Edit the if condition. First, [turn on developer mode](https://www.partitionwizard.com/partitionmagic/discord-developer-mode.html) in Discord (this will enable you to right-click on channels to copy the channel ID). Change all the text within quotes containing "Change this to a username or channel name" to a username or channel name you want to contact. Then copy the channel ID (Not to be confused with a user ID. Even when DMing people, you have to use the DM's channel ID.) and put in it the second area containing "it's-id-here". Make as many name-ID pairs as you want for all the people or channels you want to quickly contact via this bookmarklet.
 > Make sure to also change the default channel. Its format is slightly different, so make sure you only change the things marked "Choose Your Default Channel" and "default-id-here". Repeat it in the standard format, too.
 
 <details>
@@ -589,18 +591,66 @@ javascript: (function() {
 })();
 ```
 ## Anonymous Instagram Viewer
+| #utility #anonymous #social | v1.2.0 | [⬆](#table-of-contents) |
+| --- | --- | --- |
+
+When viewing a profile on Instagram, click this bookmarklet to view the profile on [StoryNavigation.com/](https://storynavigation.com/).
+```javascript
+javascript: (function() {
+    var url = window.location.href;
+    if (url.startsWith("https://www.instagram.com/stories")) {
+	var path = url.replace(/^https?:\/\/[^/]+/, '');
+	var parts = path.split('/').filter(Boolean);
+	if (parts.length > 0) {
+		window.open("https://storynavigation.com/user/" + parts[1], '_blank');
+	} else {
+		alert('Could not extract username from the URL.');
+	}
+} else {
+    var path = url.replace(/^https?:\/\/[^/]+/, '');
+	var parts = path.split('/').filter(Boolean);
+	if (parts.length > 0) {
+		window.open("https://storynavigation.com/user/" + parts[0], '_blank');
+	} else {
+		alert('Could not extract username from the URL.');
+	}
+}
+})();
+```
+
+## Copy Instagram Photos
 | #utility #anonymous #social | v1.0.0 | [⬆](#table-of-contents) |
 | --- | --- | --- |
 
 When viewing a profile on Instagram, click this bookmarklet to view the profile on [InstaNavigation.com/](https://instanavigation.com/).
 ```javascript
 javascript: (function() {
-	var path = window.location.href.replace(/^https?:\/\/[^/]+/, '');
-	var parts = path.split('/').filter(Boolean);
-	if (parts.length > 0) {
-		window.open("https://instanavigation.com/user-profile/" + parts[0], '_blank');
+	var url = document.location.href;
+	if (url.startsWith("https://www.instagram.com/stories/")) {
+		var img = document.querySelector('xl1xv1r.x5yr21d.xmz0i5r.x193iq5w.xh8yej3');
+		if (img && img.src) {
+			window.open(img.src, '_blank');
+		} else {
+			alert('No image found. This may not currently work on stories.');
+		}
 	} else {
-		alert('Could not extract username from the URL.');
+		var pattern1 = /^https:\/\/www\.instagram\.com\/p\//;
+		var pattern2 = /^https:\/\/www\.instagram\.com\/[^\/]+\/p\//;
+		if (pattern1.test(url) || pattern2.test(url)) {
+			var imgAll = document.querySelectorAll('img.x5yr21d.xu96u03.x10l6tqk.x13vifvy.x87ps6o.xh8yej3');
+			var urlParams = new URLSearchParams(window.location.search);
+			var imgIndex = urlParams.get('img_index') || 1;
+			if (imgIndex == 1) {
+				var img = imgAll[0];
+			} else {
+				var img = imgAll[1];
+			}
+			if (img && img.src) {
+				window.open(img.src, '_blank');
+			} else {
+				alert('No image found.');
+			}
+		}
 	}
 })();
-```	
+```
